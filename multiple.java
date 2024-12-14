@@ -1,12 +1,11 @@
 import java.util.*;
 interface a
 {
-    
-    
+    public void r();
 }
 interface b 
 {
-   
+    public void r1();
 }
 class c implements a,b{
      public void r()
