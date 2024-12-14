@@ -38,26 +38,26 @@ static class Item {
         return 0.0;
     }
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Swiggy swiggy = new Swiggy();
-        swiggy.showItems();
+        Scanner sc = new Scanner(System.in);
+        Swiggy swig = new Swiggy();
+        swig.showItems();
         System.out.print("Enter the number of items you want to order (comma separated): ");
-        String[] selectedItemNumbers = scanner.nextLine().split(",");
-        List<Integer> selectedItems = new ArrayList<>();
-        for (String item : selectedItemNumbers) {
-            selectedItems.add(Integer.parseInt(item.trim()));
+        String[] selitemnum = sc.nextLine().split(",");
+        List<Integer> selitem = new ArrayList<>();
+        for (String item : selitemnum) {
+            selitem.add(Integer.parseInt(item.trim()));
         }
-        double totalBill = swiggy.calculateTotalBill(selectedItems);
+        double totalBill = swig.calculateTotalBill(selitem);
         System.out.println("Total bill for the selected items: Rs. " + totalBill);
-        System.out.print("Enter the item number you want to check the bill for: ");
-        int itemIndex = scanner.nextInt();
-        double itemBill = swiggy.getItemBill(itemIndex);
+        System.out.println("Enter the item number you want to check the bill for: ");
+        int itemInd = sc.nextInt();
+        double itemBill = swig.getItemBill(itemInd);
         if (itemBill > 0) {
             System.out.println("Bill for the selected item: Rs. " + itemBill);
         } else {
             System.out.println("Invalid item selection.");
         }
 
-        scanner.close();
+        sc.close();
     }
 }
